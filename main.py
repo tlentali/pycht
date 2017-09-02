@@ -14,8 +14,15 @@ ret, label, center = cv2.kmeans(
     Z, K, None, criteria, 10, cv2.KMEANS_RANDOM_CENTERS)
 
 # Now convert back into uint8, and make original image
-center = np.uint8(center)
+center = np.uint8(center)  # value off the color selected by algo
 res = center[label.flatten()]
+"""
+for i in range(len(res)):
+    if res[i][0] != 71:
+        res[i][0] = 0
+        res[i][1] = 0
+        res[i][2] = 0
+"""
 res2 = res.reshape((img.shape))
 
 cv2.imshow('res2', res2)
