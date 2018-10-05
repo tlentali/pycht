@@ -2,7 +2,7 @@ import numpy as np
 import cv2
 import pandas as pd
 
-img = cv2.imread('ganesh.jpg')
+img = cv2.imread('misc/cat.jpg')
 Z = img.reshape((-1, 3))
 
 # convert to np.float32
