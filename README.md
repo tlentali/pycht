@@ -1,6 +1,10 @@
 # Cheshire
 
-From pics to stencil.
+From pics to stencil
+
+<p align="center">
+  <a href="#"><img src="./misc/alys.png" /></a>
+</p>
 
 > But, said Alice, if the world has absolutely no sense, who's stopping us from inventing one?  
 > **L. Caroll**
