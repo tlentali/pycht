@@ -3,13 +3,13 @@ import config
 import argparse
 
 
-def main():
+def main(nb_cluster, image_path):
     harry = KMeans()
     harry.separation(
         harry.exec_kmeans(
-            config.NB_CLUSTER,
+            nb_cluster,
             harry.convert_image(
-                config.IMAGE_PATH
+                image_path
             )
         ),
         config.IMAGE_PATH
@@ -18,15 +18,18 @@ def main():
 
 if __name__ == "__main__":
     # build the ArgumentParser
-    """
+    #"""
     parser = argparse.ArgumentParser()
 
-    parser.add_argument('--clusters', dest='clusters')
-    parser.add_argument('--file', dest='file_path')
-
+    parser.add_argument('--clusters',
+                        dest='clusters',
+                        default=config.NB_CLUSTER)
+    parser.add_argument('--file',
+                        dest='file_path',
+                        default=config.IMAGE_PATH)
     args = parser.parse_args()
 
-    config.IMAGE_PATH = args.file_path
-    config.NB_CLUSTER = args.clusters
-    """
-    main()
+    nb_cluster = args.clusters
+    image_path = args.file_path
+    #"""
+    main(nb_cluster, image_path)
