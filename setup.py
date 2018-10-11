@@ -9,11 +9,12 @@ setup(
     # Needed to actually package something
     packages=['cheshire'],
     # Needed for dependencies
-    install_requires=['pandas',
-                      'numpy',
-                      'opencv-python',
-                      'python-dateutil',
-                      'pytz'],
+    install_requires=['pandas==0.20.1',
+                      'numpy==1.15.2',
+                      'opencv-python==3.4.3.18',
+                      'python-dateutil==2.7.3',
+                      'pytz==2018.5',
+                      'six==1.11.0'],
     # *strongly* suggested for sharing
     version='0.1',
     # The license can be anything you like
