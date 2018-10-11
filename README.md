@@ -5,10 +5,11 @@ Create stencil from pics
 <p align="center">
   <a href="#"><img src="./misc/alys.png" /></a>
 </p>
+[@alys.cheshire](https://www.instagram.com/alys.cheshire/)
 
-## Why?
+## Why ?
 
-> But, said Alice, if the world has absolutely no sense, who's stopping us from inventing one?  
+> But, said Alice, if the world has absolutely no sense, who's stopping us from inventing one ?  
 > **L. Caroll**
 
 Look how easy it is :
@@ -18,7 +19,7 @@ Look how easy it is :
 ```
 
 You just have to cut and that's it ! Enjoy.  
-**Fun fact** : behind this script, you will find algos used for marketing, financial prediction, client targeting etc.  
+**Fun fact** : behind this script, you will find algos used for marketing, financial prediction and client targeting.  
 
 ## Install
 
