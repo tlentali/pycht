@@ -39,11 +39,11 @@ class KMeans(object):
             df_annexe["col3"].loc[(df['tot'] != i)] = 0
             res_annexe = df_annexe[["col1", "col2", "col3"]].as_matrix()
             res_annexe2 = res_annexe.reshape((img.shape))
-            cv2.imwrite("results/resultat_" + str(cmp) + ".jpg", res_annexe2)
+            cv2.imwrite("resultat_" + str(cmp) + ".jpg", res_annexe2)
             cmp += 1
         res_1 = df[["col1", "col2", "col3"]].as_matrix()
         res_2 = res.reshape((img.shape))
-        cv2.imwrite("results/resultat_final.jpg", res_2)
+        cv2.imwrite("resultat_final.jpg", res_2)
 
     def ShowImage(self, result_path, res):
         # generate final image

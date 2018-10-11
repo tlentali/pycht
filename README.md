@@ -6,7 +6,7 @@ Create stencil from pics
   <a href="#"><img src="./misc/alys.png" /></a>
 </p>
 
-[@alys.cheshire](https://www.instagram.com/alys.cheshire/)
+Pics by [@alys.cheshire](https://www.instagram.com/alys.cheshire/)
 
 ## Why ?
 
@@ -20,14 +20,12 @@ Look how easy it is :
 ```
 
 You just have to cut and that's it ! Enjoy.  
-**Fun fact** : behind this script, you will find algos used for marketing, financial prediction and client targeting.  
 
 ## Install
 
 ```
-pip install cheshire
+pip install git+https://github.com/tlentali/cheshire.git
 ```
 
-## to do
-- generate one file by cluster
-- generate a simplified image with an high clustering and then the actual clusterisation
+## Fun fact
+Behind this script, you will find algos used for marketing, financial prediction and client targeting.  
