@@ -7,7 +7,7 @@ setup(
     author='Thomas Lentali',
     author_email='thomas.lentali@gmail.com',
     # Needed to actually package something
-    packages=['chechire'],
+    packages=['cheshire'],
     # Needed for dependencies
     install_requires=['pandas',
                       'numpy',
