@@ -13,7 +13,7 @@ Pics by [@alys.cheshire](https://www.instagram.com/alys.cheshire/)
 > But, said Alice, if the world has absolutely no sense, who's stopping us from inventing one ?  
 > **L. Caroll**
 
-Piece of cake :
+Piece of cake, here for 3 colors :
 ```python
 >> import cheshire
 
