@@ -1,15 +1,17 @@
 import numpy as np
 import cv2
 import pandas as pd
+import sys
+import warnings
 
 if not sys.warnoptions:
     warnings.simplefilter("ignore")
 
 
 class Cheshire(object):
-    def __init__(self, file_path, nb_clusters):
-        self.file_path = file_path
-        self.nb_clusters = nb_clusters
+    def __init__(self, image_path, nb_cluster):
+        self.image_path = image_path
+        self.nb_cluster = nb_cluster
 
     def convert_image(self, file_path):
         img = cv2.imread(file_path)
@@ -46,7 +48,7 @@ class Cheshire(object):
             df_annexe["col3"].loc[(df['tot'] != i)] = 0
             res_annexe = df_annexe[["col1", "col2", "col3"]].as_matrix()
             res_annexe2 = res_annexe.reshape((img.shape))
-            cv2.imwrite("resultat_" + str(cmp) + ".jpg", res_annexe2)
+            cv2.imwrite("stencil_" + str(cmp) + ".jpg", res_annexe2)
             cmp += 1
         res_1 = df[["col1", "col2", "col3"]].as_matrix()
         res_2 = res.reshape((img.shape))
