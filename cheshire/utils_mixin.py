@@ -2,6 +2,9 @@ import numpy as np
 import cv2
 import pandas as pd
 
+if not sys.warnoptions:
+    warnings.simplefilter("ignore")
+
 
 class Cheshire(object):
     def __init__(self, file_path, nb_clusters):
@@ -58,10 +61,11 @@ class Cheshire(object):
         cv2.destroyAllWindows()
 
     def stencil(self):
-        harry.separation(
-            harry.exec_kmeans(
+        self.separation(
+            self.exec_kmeans(
                 self.nb_cluster,
-                harry.convert_image(self.image_path)
+                self.convert_image(self.image_path)
             ),
             self.image_path
         )
+        print('Done !')
