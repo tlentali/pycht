@@ -3,7 +3,11 @@ import cv2
 import pandas as pd
 
 
-class KMeans(object):
+class Cheshire(object):
+    def __init__(self, file_path, nb_clusters):
+        self.file_path = file_path
+        self.nb_clusters = nb_clusters
+
     def convert_image(self, file_path):
         img = cv2.imread(file_path)
         Z = img.reshape((-1, 3))
@@ -52,3 +56,12 @@ class KMeans(object):
         cv2.imshow('res2', res2)
         cv2.waitKey(0)
         cv2.destroyAllWindows()
+
+    def stencil(self):
+        harry.separation(
+            harry.exec_kmeans(
+                self.nb_cluster,
+                harry.convert_image(self.image_path)
+            ),
+            self.image_path
+        )
