@@ -9,6 +9,9 @@ if not sys.warnoptions:
 
 
 class Cheshire(object):
+    image_path = 'misc/cat.jpg'
+    nb_cluster = 3
+
     def __init__(self, image_path, nb_cluster):
         self.image_path = image_path
         self.nb_cluster = nb_cluster
@@ -23,7 +26,7 @@ class Cheshire(object):
     def exec_kmeans(self, nb_cluster, Z):
         # define criteria, number of clusters(K) and apply kmeans()
         criteria = (cv2.TERM_CRITERIA_EPS +
-                    cv2.TERM_CRITERIA_MAX_ITER, 10, 1.0)
+                    cv2.TERM_CRITERIA_MAX_ITER, 10, 1)
         K = nb_cluster
         ret, label, center = cv2.kmeans(
             Z, K, None, criteria, 10, cv2.KMEANS_RANDOM_CENTERS)
