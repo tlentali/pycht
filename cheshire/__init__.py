@@ -1,1 +1,1 @@
-from chechire import cheshire
+from cheshire import cheshire
