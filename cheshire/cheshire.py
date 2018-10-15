@@ -28,8 +28,10 @@ class Cheshire(object):
         criteria = (cv2.TERM_CRITERIA_EPS +
                     cv2.TERM_CRITERIA_MAX_ITER, 10, 1)
         K = nb_cluster
+        # Set flags (Just to avoid line break in the code)
+        flags = cv2.KMEANS_RANDOM_CENTERS
         ret, label, center = cv2.kmeans(
-            Z, K, criteria, 10, 0)
+            Z, K, None, criteria, 10, flags)
         # Now convert back into uint8, and make original image
         center = np.uint8(center)  # value off the color selected by algo
         res = center[label.flatten()]
