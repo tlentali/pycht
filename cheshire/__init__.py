@@ -1,1 +1,1 @@
-from cheshire import Cheshire
+from .cheshire import Cheshire
