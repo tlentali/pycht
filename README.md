@@ -13,21 +13,35 @@ Pics by [@alys.cheshire](https://www.instagram.com/alys.cheshire/)
 > But, said Alice, if the world has absolutely no sense, who's stopping us from inventing one ?  
 > **L. Caroll**
 
-Piece of cake, here for 3 colors :
-```python
->> import cheshire
-
->> pics = cheshire.Cheshire('/pics_path.jpg', 3)
->> pics.stencil()
-```
-
-You just have to cut and that's it ! Enjoy.  
-
 ## Install
 
 ```
 pip install git+https://github.com/tlentali/cheshire.git
 ```
+
+## Exemple
+Take a nice picture :  
+
+<img src="./misc/cat.jpg" width="200">
+
+Piece of cake, here for 4 colors :
+```python
+>> import cheshire
+
+>> pics = cheshire.Cheshire('/pics_path.jpg', 4)
+>> pics.stencil()
+```
+
+ Stencil 1                 |  stencil 2                 |   stencil 3               | stencil 4                 |
+:-------------------------:|:--------------------------:| :-----------------------: | :-----------------------: |
+![](./misc/stencil_2.jpg)  |  ![](./misc/stencil_3.jpg) | ![](./misc/stencil_4.jpg) | ![](./misc/stencil_5.jpg) |
+
+
+You just have to cut and that's it ! Enjoy.  
+
+Final result rendering with all stencils :
+
+<img src="./misc/resultat_final.jpg" width="200">
 
 ## How ?
 Behind this script, you will find algos used for marketing, financial prediction and client targeting.  
