@@ -21,8 +21,9 @@ pip install git+https://github.com/tlentali/cheshire.git
 
 ## Exemple
 Take a nice picture :  
-
-<img src="./misc/cat.jpg" width="200">
+<p align="center">
+  <a href="#"><img src="./misc/cat.jpg" width="250"></a>
+</p>
 
 Piece of cake, here for 4 colors :
 ```python
@@ -39,7 +40,9 @@ Piece of cake, here for 4 colors :
 
 Final result rendering with all stencils :
 
-<img src="./misc/resultat_final.jpg" width="200">
+<p align="center">
+  <a href="#"><img src="./misc/resultat_final.jpg" width="250"></a>
+</p>
 
 You just have to cut and to paint it ! Enjoy.  
 
