@@ -37,11 +37,11 @@ Piece of cake, here for 4 colors :
 ![](./misc/stencil_2.jpg)  |  ![](./misc/stencil_3.jpg) | ![](./misc/stencil_4.jpg) | ![](./misc/stencil_5.jpg) |
 
 
-You just have to cut and that's it ! Enjoy.  
-
 Final result rendering with all stencils :
 
 <img src="./misc/resultat_final.jpg" width="200">
+
+You just have to cut and to paint it ! Enjoy.  
 
 ## How ?
 Behind this script, you will find algos used for marketing, financial prediction and client targeting.  
