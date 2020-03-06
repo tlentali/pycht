@@ -1,4 +1,4 @@
-name: Label sponsors
+name: Label sponsor
 on:
   pull_request:
     types: [opened]
