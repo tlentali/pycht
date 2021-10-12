@@ -11,7 +11,7 @@ setup(
     # Needed for dependencies
     install_requires=['pandas==0.20.1',
                       'numpy==1.15.2',
-                      'opencv-python==3.4.3.18',
+                      'opencv-python==3.4.7.28',
                       'python-dateutil==2.7.3',
                       'pytz==2018.5',
                       'six==1.11.0'],
