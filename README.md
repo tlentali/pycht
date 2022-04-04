@@ -1,4 +1,4 @@
-<h1 align="center";
+<p align="center";
     font-family: Georgia, sans-serif;
     text-decoration: none;
     background: #ffbdfb;
@@ -7,7 +7,7 @@
     font-size: 28px;>
     <a href="#"><img src="https://raw.githubusercontent.com/tlentali/cheshire/master/misc/cheshire_logo.png"  alt="cheshire_logo" width="250"/>
     </a>
-</h1>
+</p>
 
 <p align="center">
   <b>Street art by clustering.
