@@ -18,7 +18,7 @@
 </p>
 
 <p align="right">
-Pics by <a href="https://www.instagram.com/alys.cheshire/)">@alys.cheshire</a>
+Pics by <a href="https://www.instagram.com/alys.cheshire/">@alys.cheshire</a>
 </p>
 
 ## Why ?
