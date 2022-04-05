@@ -35,10 +35,9 @@ Take a nice picture :
 
 Generate a 4 colors stencil model :
 ```python
->> import cheshire
+>> from cheshire import Cheshire
 
->> pics = cheshire.Cheshire('/pics_path.jpg', 4)
->> pics.stencil()
+>> Cheshire.stencil('cat.jpg', 'result_folder', nb_color)
 ```
 
  Stencil 1                 |  stencil 2                 |   stencil 3               | stencil 4                 |
