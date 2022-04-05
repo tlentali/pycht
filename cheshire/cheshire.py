@@ -1,35 +1,46 @@
-import numpy as np
+"""
+Project settings
+"""
 import cv2
-import pandas as pd
 import sys
+import numpy as np
+import pandas as pd
     
     
 class Cheshire:
-    def __init__(self, input_path:str, output_path:str, nb_cluster:int):
-        self.input_path = input_path
-        self.output_path = output_path
-        self.nb_cluster = nb_cluster
-        
-    def stencil(self)->None:
+    """
+    Project settings
+    """
+    def stencil(self, input_path:str, output_path:str, nb_cluster:int) -> None:
         self.separation(
             self.exec_kmeans(
-                self.nb_cluster,
-                self.convert_image(self.input_path)
+                nb_cluster,
+                self.convert_image_to_float(input_path)
             ),
-            self.image_path
+            input_path, 
+            output_path
         )
 
 
 class Image_Processing:
-    def convert_image_to_float(self, file_path:str):
-        img = cv2.imread(file_path)
+    """
+    Project settings
+    """
+    def convert_image_to_float(self, input_path:str):
+        """
+        Project settings
+        """
+        img = cv2.imread(input_path)
         Z = img.reshape((-1, 3))
         # convert to np.float32
         Z = np.float32(Z)
         return Z
     
-     def separation(self, res, file_path:str):
-        img = cv2.imread(file_path)
+     def separation(self, res, input_path:str, output_path:str) -> None:
+        """
+        Project settings
+        """
+        img = cv2.imread(input_path)
         # separate differants colors
         df = pd.DataFrame(res)
         df.columns = ['col1', 'col2', 'col3']
@@ -48,9 +59,12 @@ class Image_Processing:
             cmp += 1
         res_1 = df[["col1", "col2", "col3"]].as_matrix()
         res_2 = res.reshape((img.shape))
-        cv2.imwrite("resultat_final.jpg", res_2)
+        cv2.imwrite(output_path, res_2)
 
-    def ShowImage(self, result_path:str, res):
+    def ShowImage(self, result_path:str, res) -> None:
+        """
+        Project settings
+        """
         # generate final image
         res2 = res.reshape((self.img.shape))
         cv2.imwrite(result_path, res2)
@@ -60,16 +74,21 @@ class Image_Processing:
 
         
 class Clustering:
+    """
+    Project settings
+    """
     @staticmethod
     def exec_kmeans(nb_cluster:int, Z):
+        """
+        Project settings
+        """
         # define criteria, number of clusters(K) and apply kmeans()
         criteria = (cv2.TERM_CRITERIA_EPS +
                     cv2.TERM_CRITERIA_MAX_ITER, 10, 1)
         # Set flags (Just to avoid line break in the code)
         flags = cv2.KMEANS_RANDOM_CENTERS
-        ret, label, center = cv2.kmeans(
-            Z, nb_cluster, None, criteria, 10, flags)
+        ret, label, center = cv2.kmeans(Z, nb_cluster, None, criteria, 10, flags)
         # Now convert back into uint8, and make original image
-        center = np.uint8(center)  # value off the color selected by algo
+        center = np.uint8(center)  # value of the color selected by algo
         res = center[label.flatten()]
         return res
