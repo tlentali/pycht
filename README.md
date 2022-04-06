@@ -36,7 +36,7 @@ Generate a 4 colors stencil model :
 ```python
 >> from cheshire import Cheshire
 
->> Cheshire.stencil('cat.jpg', 'result_folder', nb_color)
+>> Cheshire.stencil('cat.jpg', 'result_folder', nb_colors)
 ```
 
  Stencil 1                 |  stencil 2                 |   stencil 3               | stencil 4                 |
@@ -79,7 +79,7 @@ pip install git+ssh://git@github.com/tlentali/cheshire.git
 
 Behind this script, you will find algos used for marketing, financial prediction and client targeting.  
 The pics is tranlated into a matrice, each value indicate a pixel color in three dimension.  
-Then, clustering algorithm is used to reshape the picture by colors. The number of colors desired is a parameter and is chosen directly by the user.  
+Then, a clustering algorithm is used to reshape the picture by colors. The number of colors desired is a parameter and is chosen directly by the user.  
 As an output you have the picture with the number of color you choose and a picture by color to elaborate each stencils one by one.  
 
 ## 🖖 Contributing

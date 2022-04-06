@@ -10,7 +10,7 @@ class Clustering:
     Project settings
     """
     @staticmethod
-    def exec_kmeans(nb_cluster:int, Z):
+    def exec_kmeans(nb_clusters:int, Z):
         """
         Project settings
         """
@@ -19,7 +19,7 @@ class Clustering:
                     cv2.TERM_CRITERIA_MAX_ITER, 10, 1)
         # Set flags (Just to avoid line break in the code)
         flags = cv2.KMEANS_RANDOM_CENTERS
-        ret, label, center = cv2.kmeans(Z, nb_cluster, None, criteria, 10, flags)
+        ret, label, center = cv2.kmeans(Z, nb_clusters, None, criteria, 10, flags)
         # Now convert back into uint8, and make original image
         center = np.uint8(center)  # value of the color selected by algo
         res = center[label.flatten()]

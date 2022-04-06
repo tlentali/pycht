@@ -9,10 +9,10 @@ class Cheshire:
     """
     Project settings
     """
-    def stencil(self, input_path:str, output_path:str, nb_cluster:int) -> None:
+    def stencil(self, input_path:str, output_path:str, nb_colors:int) -> None:
         self.separation(
             self.exec_kmeans(
-                nb_cluster,
+                nb_colors,
                 self.convert_image_to_float(input_path)
             ),
             input_path, 
