@@ -14,7 +14,7 @@
 </p>
 
 <p align="center">
-  <a href="#"><img src="./misc/alys.png" /></a>
+  <a href="#"><img src="https://raw.githubusercontent.com/tlentali/cheshire/master/misc/alys.png" /></a>
 </p>
 
 <p align="right">
@@ -30,7 +30,7 @@ Pics by <a href="https://www.instagram.com/alys.cheshire/">@alys.cheshire</a>
 
 Take a nice picture :  
 <p align="center">
-  <a href="#"><img src="./misc/cat.jpg" width="250"></a>
+  <a href="#"><img src="https://raw.githubusercontent.com/tlentali/cheshire/master/misc/cat.jpg" width="250"></a>
 </p>
 
 Generate a 4 colors stencil model :
@@ -42,13 +42,13 @@ Generate a 4 colors stencil model :
 
  Stencil 1                 |  stencil 2                 |   stencil 3               | stencil 4                 |
 :-------------------------:|:--------------------------:| :-----------------------: | :-----------------------: |
-![](./misc/stencil_2.jpg)  |  ![](./misc/stencil_3.jpg) | ![](./misc/stencil_4.jpg) | ![](./misc/stencil_5.jpg) |
+![](https://raw.githubusercontent.com/tlentali/cheshire/master/misc/stencil_2.jpg)  |  ![](https://raw.githubusercontent.com/tlentali/cheshire/master/misc/stencil_3.jpg) | ![](https://raw.githubusercontent.com/tlentali/cheshire/master/misc/stencil_4.jpg) | ![](https://raw.githubusercontent.com/tlentali/cheshire/master/misc/stencil_5.jpg) |
 
 
 Final result rendering with all stencils :
 
 <p align="center">
-  <a href="#"><img src="./misc/resultat_final.jpg" width="250"></a>
+  <a href="#"><img src="https://raw.githubusercontent.com/tlentali/cheshire/master/misc/resultat_final.jpg" width="250"></a>
 </p>
 
 Cut it, paint it.  
