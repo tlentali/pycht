@@ -5,7 +5,7 @@ from image_processing import ImageProcessing
 from clustering import Clustering
 
 
-class Cheshire:
+class Pycht:
     """
     Project settings
     """

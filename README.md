@@ -5,7 +5,7 @@
     padding: 3px 6px;
     color: #000;
     font-size: 28px;>
-    <a href="#"><img src="https://raw.githubusercontent.com/tlentali/cheshire/master/misc/cheshire_logo.png"  alt="cheshire_logo" width="250"/>
+    <a href="#"><img src="https://raw.githubusercontent.com/tlentali/pycht/master/misc/pycht_logo.png"  alt="pycht_logo" width="250"/>
     </a>
 </p>
 
@@ -14,11 +14,11 @@
 </p>
 
 <p align="center">
-  <a href="#"><img src="https://raw.githubusercontent.com/tlentali/cheshire/master/misc/alys.png" /></a>
+  <a href="#"><img src="https://raw.githubusercontent.com/tlentali/pycht/master/misc/alys.png" /></a>
 </p>
 
 <p align="right">
-Pics by <a href="https://www.instagram.com/alys.cheshire/">@alys.cheshire</a>
+Pics by <a href="https://www.instagram.com/alys.pycht/">@alys.cheshire</a>
 </p>
 
 > But, said Alice, if the world has absolutely no sense, who's stopping us from inventing one ?
@@ -29,25 +29,25 @@ Pics by <a href="https://www.instagram.com/alys.cheshire/">@alys.cheshire</a>
 
 Take a nice picture :
 <p align="center">
-  <a href="#"><img src="https://raw.githubusercontent.com/tlentali/cheshire/master/misc/cat.jpg" width="250"></a>
+  <a href="#"><img src="https://raw.githubusercontent.com/tlentali/pycht/master/misc/cat.jpg" width="250"></a>
 </p>
 
 Generate a 4 colors stencil model :
 ```python
->> from cheshire import Cheshire
+>> from pycht import Pycht
 
->> Cheshire().stencil('cat.jpg', 'stencil_cat.jpg', 4)
+>> Pycht().stencil('cat.jpg', 'stencil_cat.jpg', 4)
 ```
 
  Stencil 1                 |  stencil 2                 |   stencil 3               | stencil 4                 |
 :-------------------------:|:--------------------------:| :-----------------------: | :-----------------------: |
-![](https://raw.githubusercontent.com/tlentali/cheshire/master/misc/stencil_2.jpg)  |  ![](https://raw.githubusercontent.com/tlentali/cheshire/master/misc/stencil_3.jpg) | ![](https://raw.githubusercontent.com/tlentali/cheshire/master/misc/stencil_4.jpg) | ![](https://raw.githubusercontent.com/tlentali/cheshire/master/misc/stencil_5.jpg) |
+![](https://raw.githubusercontent.com/tlentali/pycht/master/misc/stencil_2.jpg)  |  ![](https://raw.githubusercontent.com/tlentali/pycht/master/misc/stencil_3.jpg) | ![](https://raw.githubusercontent.com/tlentali/pycht/master/misc/stencil_4.jpg) | ![](https://raw.githubusercontent.com/tlentali/pycht/master/misc/stencil_5.jpg) |
 
 
 Final result rendering with all stencils :
 
 <p align="center">
-  <a href="#"><img src="https://raw.githubusercontent.com/tlentali/cheshire/master/misc/resultat_final.jpg" width="250"></a>
+  <a href="#"><img src="https://raw.githubusercontent.com/tlentali/pycht/master/misc/resultat_final.jpg" width="250"></a>
 </p>
 
 Cut it, paint it, stare at it, leave it.
@@ -59,19 +59,19 @@ Enjoy !
 :snake: You need to install **Python 3.6** or above.
 
 Installation can be done by using `pip`.
-There are [wheels available](https://pypi.org/project/cheshire/#files) for **Linux**, **MacOS**, and **Windows**.
+There are [wheels available](https://pypi.org/project/pycht/#files) for **Linux**, **MacOS**, and **Windows**.
 
 ```bash
-pip install cheshire
+pip install pycht
 ```
 
 You can also install the latest development version as so:
 
 ```bash
-pip install git+https://github.com/tlentali/cheshire
+pip install git+https://github.com/tlentali/pycht
 
 # Or, through SSH:
-pip install git+ssh://git@github.com/tlentali/cheshire.git
+pip install git+ssh://git@github.com/tlentali/pycht.git
 ```
 
 
@@ -84,11 +84,11 @@ As an output you have the picture with the number of color you choose and a pict
 
 ## 🖖 Contributing
 
-Feel free to contribute in any way you like, we're always open to new ideas and approaches. If you want to contribute to the code base please check out the [CONTRIBUTING.md](https://github.com/tlentali/cheshire/blob/master/CONTRIBUTING.md) file. Also take a look at the [issue tracker](https://github.com/tlentali/cheshire/issues) and see if anything takes your fancy.
+Feel free to contribute in any way you like, we're always open to new ideas and approaches. If you want to contribute to the code base please check out the [CONTRIBUTING.md](https://github.com/tlentali/pycht/blob/master/CONTRIBUTING.md) file. Also take a look at the [issue tracker](https://github.com/tlentali/pycht/issues) and see if anything takes your fancy.
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Again, contributions of any kind are welcome!
 
 
 ## 📜 License
 
-```cheshire``` is free and open-source software licensed under the [MIT license](https://github.com/tlentali/cheshire/blob/master/LICENSE).
+```pycht``` is free and open-source software licensed under the [MIT license](https://github.com/tlentali/pycht/blob/master/LICENSE).
