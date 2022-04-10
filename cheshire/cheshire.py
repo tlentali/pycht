@@ -1,20 +1,24 @@
 """
 Project settings
 """
-from image_processing import Image_Processing
+from image_processing import ImageProcessing
 from clustering import Clustering
-    
-    
+
+
 class Cheshire:
     """
     Project settings
     """
-    def stencil(self, input_path:str, output_path:str, nb_colors:int) -> None:
-        self.separation(
-            self.exec_kmeans(
-                nb_colors,
-                self.convert_image_to_float(input_path)
+
+    def __init__(self) -> None:
+        self.image_processing = ImageProcessing()
+        self.clustering = Clustering()
+
+    def stencil(self, input_path: str, output_path: str, nb_colors: int) -> None:
+        return self.image_processing.color_separation(
+            self.clustering.exec_kmeans(
+                self.image_processing.process(input_path), nb_colors
             ),
-            input_path, 
-            output_path
+            input_path,
+            output_path,
         )
