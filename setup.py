@@ -18,7 +18,7 @@ VERSION = '0.1'
 
 # Package requirements.
 base_packages = [
-    'numpy==1.15.2',
+    'numpy==1.21.0',
     'opencv-python==3.4.3.18',
     'pandas==0.20.1',
     'pytz==2018.5',
