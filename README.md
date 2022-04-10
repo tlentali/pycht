@@ -21,9 +21,6 @@
 Pics by <a href="https://www.instagram.com/alys.pycht/">@alys.cheshire</a>
 </p>
 
-> But, said Alice, if the world has absolutely no sense, who's stopping us from inventing one ?
-> **_L. Caroll_**
-
 
 ## ⚡️ Quick start
 
