@@ -1,5 +1,5 @@
 from .pycht import Pycht
-from .image_processing import Image_Processing
+from .image_processing import ImageProcessing
 from .clustering import Clustering
 
-__all__ = ["Pycht", "Image_Processing", "Clustering"]
+__all__ = ["Pycht", "ImageProcessing", "Clustering"]

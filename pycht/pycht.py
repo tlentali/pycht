@@ -1,8 +1,8 @@
 """
 Project settings
 """
-from image_processing import ImageProcessing
-from clustering import Clustering
+from .image_processing import ImageProcessing
+from .clustering import Clustering
 
 
 class Pycht:

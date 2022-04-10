@@ -6,7 +6,7 @@ from setuptools import setup
 
 
 # Package meta-data.
-NAME = 'cheshire'
+NAME = 'pycht'
 DESCRIPTION = 'Streetart by clustering.'
 LONG_DESCRIPTION_CONTENT_TYPE = 'text/markdown'
 URL = 'https://github.com/tlentali/cheshire'
@@ -18,11 +18,8 @@ VERSION = '0.1'
 
 # Package requirements.
 base_packages = [
-    'numpy==1.15.2',
-    'opencv-python==3.4.3.18',
-    'pandas==0.20.1',
-    'pytz==2018.5',
-    'six==1.11.0',
+    'opencv-python==4.5.5.64',
+    'pandas==1.4.2',
     ]
 
 here = os.path.abspath(os.path.dirname(__file__))

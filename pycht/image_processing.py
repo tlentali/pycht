@@ -70,13 +70,24 @@ class ImageProcessing:
         cmp = 1
         for i in df["tot"].unique():
             df_annexe = df.copy()
-            df_annexe["col1"].loc[(df["tot"] != i)] = 0
-            df_annexe["col2"].loc[(df["tot"] != i)] = 0
-            df_annexe["col3"].loc[(df["tot"] != i)] = 0
-            res_annexe = df_annexe[["col1", "col2", "col3"]].as_matrix()
+            df_annexe.loc[(df["tot"] != i), "col1"] = 0
+            df_annexe.loc[(df["tot"] != i), "col2"] = 0
+            df_annexe.loc[(df["tot"] != i), "col3"] = 0
+
+            res_annexe = df_annexe[["col1", "col2", "col3"]].values
             res_annexe2 = res_annexe.reshape((img.shape))
-            cv2.imwrite("stencil_" + str(cmp) + ".jpg", res_annexe2)
+
+            # threshold on black to make a transparency mask
+            color = (0, 0, 0)
+            mask = np.where((res_annexe2 == color).all(axis=2), 0, 255).astype(np.uint8)
+
+            # put mask into alpha channel
+            result = res_annexe2.copy()
+            result = cv2.cvtColor(result, cv2.COLOR_BGR2BGRA)
+            result[:, :, 3] = mask
+
+            cv2.imwrite("stencil_" + str(cmp) + ".png", result)
             cmp += 1
-        res_1 = df[["col1", "col2", "col3"]].as_matrix()
+        # res_1 = df[["col1", "col2", "col3"]].as_matrix()
         res_2 = res.reshape((img.shape))
         self.write_image(res_2, output_path)
