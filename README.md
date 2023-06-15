@@ -53,7 +53,7 @@ Enjoy !
 
 ## 🛠 Installation
 
-:snake: You need to install **Python 3.6** or above.
+:snake: You need to install **Python 3.7** or above.
 
 Installation can be done by using `pip`.
 There are [wheels available](https://pypi.org/project/pycht/#files) for **Linux**, **MacOS**, and **Windows**.
