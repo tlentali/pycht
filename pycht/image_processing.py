@@ -8,7 +8,7 @@ import pandas as pd
 
 class ImageProcessing:
     """
-    Project settings
+    Set of method allowing the image processing management
     """
 
     def process(self, input_path: str) -> np.ndarray:
