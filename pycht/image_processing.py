@@ -1,5 +1,5 @@
 """
-Project settings
+Image processing set of tools including reading, showing , reshape and even color separation to buuild the final stencils.
 """
 import cv2
 import numpy as np
@@ -8,12 +8,12 @@ import pandas as pd
 
 class ImageProcessing:
     """
-    Set of method allowing the image processing management
+    Set of method allowing the image processing management.
     """
 
     def process(self, input_path: str) -> np.ndarray:
         """
-        Convert to np.float32
+        Read, reshape and convert image to np.float32 format.
         """
         img = self.read_image(input_path)
         Z = self.reshape_image(img)
@@ -22,24 +22,27 @@ class ImageProcessing:
     @staticmethod
     def read_image(input_path: str) -> np.ndarray:
         """
-        Read image from path
+        Read image from path.
         """
         return cv2.imread(input_path)
 
     @staticmethod
     def reshape_image(image: np.ndarray) -> np.ndarray:
         """
-        Reshape image
+        Reshape image.
         """
         return image.reshape((-1, 3))
 
     @staticmethod
     def write_image(res: np.ndarray, output_path: str) -> None:
+        """
+        Write image to file.
+        """
         cv2.imwrite(output_path, res)
 
     def ShowImage(self, result_path: str, res) -> None:
         """
-        Project settings
+        Display image on screen.
         """
         # generate final image
         res2 = res.reshape((self.img.shape))
@@ -51,13 +54,13 @@ class ImageProcessing:
     @staticmethod
     def convert_image_to_float(Z) -> np.ndarray:
         """
-        Convert to np.float32
+        Convert to np.float32 format.
         """
         return np.float32(Z)
 
     def color_separation(self, res, input_path: str, output_path: str) -> None:
         """
-        Project settings
+        Filter a selected cluster of color on the image.
         """
         img = self.read_image(input_path)
         # separate differants colors
