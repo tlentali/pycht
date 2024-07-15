@@ -161,3 +161,7 @@ cython_debug/
 
 # Avoid poetry.lock
 poetry.lock
+
+# No track of png or jpeg files
+*.png
+*.jpg
