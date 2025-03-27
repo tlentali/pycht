@@ -1,0 +1,15 @@
+site_name: Pycht Documentation
+theme:
+  name: material
+
+plugins:
+  - search
+  - mkdocstrings:
+      default_handler: python
+
+nav:
+  - Home: index.md
+  - Reference:
+      - Pycht: reference/pycht.md
+      - Image Processing: reference/image_processing.md
+      - Clustering: reference/clustering.md
