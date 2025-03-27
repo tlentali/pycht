@@ -9,6 +9,7 @@ plugins:
 
 nav:
   - Home: index.md
+  - Getting Started: getting-started.md
   - Reference:
       - Pycht: reference/pycht.md
       - Image Processing: reference/image_processing.md

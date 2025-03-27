@@ -34,3 +34,42 @@ from pycht import Pycht
 p = Pycht()
 p.stencil("images/input.jpg", "images/output.png", nb_colors=5)
 ```
+
+This will generate:
+- output.png → final clustered image
+- stencil_1.png, stencil_2.png, etc. → one per color cluster, with transparency
+
+---
+
+## 🧪 Try It Out
+
+Want to experiment? Just provide any image and see how it gets broken down into layers of color.
+
+---
+
+## 📚 Documentation
+
+- [Getting Started](getting-started.md)
+- API Reference
+
+---
+
+## 🛠️ Technologies Used
+
+- Python 3.10+
+- OpenCV
+- NumPy
+- Pandas
+- MkDocs (for this documentation!)
+
+---
+
+## 🙌 Contributing
+
+Pull requests are welcome! Feel free to open an issue or suggest improvements.
+
+---
+
+## 📄 License
+
+MIT License © Thomas Lentali
