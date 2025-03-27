@@ -1,5 +1,5 @@
 """
-Project settings
+Build cluster of color from image.
 """
 import cv2
 import numpy as np
@@ -11,9 +11,9 @@ class Clustering:
     """
 
     @staticmethod
-    def exec_kmeans(Z: np.ndarray, nb_clusters: int):
+    def compute(Z: np.ndarray, nb_clusters: int):
         """
-        Project settings
+        Deliver the clustering result.
         """
         _, label, center = cv2.kmeans(
             Z,

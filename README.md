@@ -29,31 +29,31 @@ Take a nice picture :
   <a href="#"><img src="https://raw.githubusercontent.com/tlentali/pycht/master/misc/cat.jpg" width="250"></a>
 </p>
 
-Generate a 4 colors stencil model :
+Generate a 5 colors stencil model :
 ```python
 >> from pycht import Pycht
 
->> Pycht().stencil('cat.jpg', 'stencil_cat.jpg', 4)
+>> Pycht().stencil('cat.jpg', 'stencil_cat.jpg', 5)
 ```
 
- Stencil 1                 |  stencil 2                 |   stencil 3               | stencil 4                 |
-:-------------------------:|:--------------------------:| :-----------------------: | :-----------------------: |
-![](https://raw.githubusercontent.com/tlentali/pycht/master/misc/stencil_2.jpg)  |  ![](https://raw.githubusercontent.com/tlentali/pycht/master/misc/stencil_3.jpg) | ![](https://raw.githubusercontent.com/tlentali/pycht/master/misc/stencil_4.jpg) | ![](https://raw.githubusercontent.com/tlentali/pycht/master/misc/stencil_5.jpg) |
+ Stencil 1                 |  stencil 2                 |   stencil 3               | stencil 4                 | stencil 5 |
+:-------------------------:|:--------------------------:| :-----------------------: | :-----------------------: | :-----------------------: |
+![](https://raw.githubusercontent.com/tlentali/pycht/master/misc/stencil_2.png)  |  ![](https://raw.githubusercontent.com/tlentali/pycht/master/misc/stencil_3.png) | ![](https://raw.githubusercontent.com/tlentali/pycht/master/misc/stencil_4.png) | ![](https://raw.githubusercontent.com/tlentali/pycht/master/misc/stencil_5.png) | ![](https://raw.githubusercontent.com/tlentali/pycht/master/misc/stencil_1.png) |
 
 
 Final result rendering with all stencils :
 
 <p align="center">
-  <a href="#"><img src="https://raw.githubusercontent.com/tlentali/pycht/master/misc/resultat_final.jpg" width="250"></a>
+  <a href="#"><img src="https://raw.githubusercontent.com/tlentali/pycht/master/misc/stencil_cat.jpg" width="250"></a>
 </p>
 
-Cut it, paint it, stare at it, leave it.
+Cut it, paint it, stare at it. 
 Enjoy !
 
 
 ## 🛠 Installation
 
-:snake: You need to install **Python 3.7** or above.
+🐍 You need to install **Python 3.12** or above.
 
 Installation can be done by using `pip`.
 There are [wheels available](https://pypi.org/project/pycht/#files) for **Linux**, **MacOS**, and **Windows**.
