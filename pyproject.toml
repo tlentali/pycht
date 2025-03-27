@@ -1,19 +1,15 @@
-[tool.poetry]
+[project]
 name = "pycht"
 version = "0.1.0"
-description = "Streetart by clustering."
-authors = ["tlentali <thomas.lentali@gmail.com>"]
-repository = "https://github.com/tlentali/pycht"
+description = "Add your description here"
 readme = "README.md"
-license = {file = "LICENSE"}
-keywords = ['data-science', 'machine-learning', 'clustering','statistics', 'streetart', 'stencil', 'art']
+requires-python = ">=3.12"
+dependencies = [
+    "opencv-python>=4.11.0.86",
+    "pandas>=2.2.3",
+]
 
-[tool.poetry.dependencies]
-python = "^3.10"
-pandas = "^2.2.2"
-opencv-python = "^4.10.0"
-jupyter = "^1.0.0"
-
-[build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
+[dependency-groups]
+dev = [
+    "jupyter>=1.1.1",
+]

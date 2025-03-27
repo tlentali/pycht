@@ -165,3 +165,7 @@ poetry.lock
 # No track of png or jpeg files
 *.png
 *.jpg
+
+# UV
+*.lock
+.python-version
