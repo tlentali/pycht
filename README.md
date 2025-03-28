@@ -31,9 +31,9 @@ Take a nice picture :
 
 Generate a 5 colors stencil model :
 ```python
->> from pycht import Pycht
+>>> from pycht import Pycht
 
->> Pycht().stencil('cat.jpg', 'stencil_cat.jpg', 5)
+>>> Pycht().stencil('cat.jpg', 'stencil_cat.jpg', 5)
 ```
 
  Stencil 1                 |  stencil 2                 |   stencil 3               | stencil 4                 | stencil 5 |
@@ -74,10 +74,33 @@ pip install git+ssh://git@github.com/tlentali/pycht.git
 
 ## 🥄 How ?
 
-Behind this script, you will find algos used for marketing, financial prediction and client targeting.
-The pics is tranlated into a matrice, each value indicate a pixel color in three dimension.
-Then, a clustering algorithm is used to reshape the picture by colors. The number of colors desired is a parameter and is chosen directly by the user.
-As an output you have the picture with the number of color you choose and a picture by color to elaborate each stencils one by one.
+## 🛠️ How Does It Work?
+
+Imagine Pycht as your personal digital street artist. Here's what happens under the hood, step-by-step:
+
+1. **🖼️ Image loading**  
+   Pycht grabs your input image and flattens it like a pancake — every pixel becomes a 3-value row (B, G, R) in a giant NumPy array. Think of it as turning your photo into a spreadsheet of colors.
+
+2. **🎯 K-Means clustering**  
+   Then comes the science. Using OpenCV’s `kmeans`, we ask: *“Hey, what are the `N` most dominant colors in this image?”*  
+   The algorithm groups similar pixels into `nb_colors` clusters and assigns each one a centroid — like reducing a rainbow into just a few paint buckets.
+
+3. **🎨 Color mapping**  
+   Every pixel in your image is replaced by its cluster's centroid. Boom — you've got a stylized version of your image with just `N` bold, poster-style colors.
+
+4. **🔍 Color separation**  
+   Now the magic: for each color, Pycht creates a mask. All pixels that **don’t** belong to the current color cluster are set to black (and later transparent).  
+   Each color gets its own PNG file — like cutting stencils for spray-painting layers IRL.
+
+5. **📁 File drop**  
+   Your output includes:
+   - `output.png` → The clustered image
+   - `stencil_1.png`, `stencil_2.png`, ... → Transparent layers, one per color
+
+> It's like building silkscreen layers, but with Python, pixels, and zero mess.
+
+Ready to turn your cat photo into street art? Let Pycht paint it.
+
 
 ## 🖖 Contributing
 
