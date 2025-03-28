@@ -74,10 +74,10 @@ pip install git+ssh://git@github.com/tlentali/pycht.git
 
 ## 🥄 How Does It Work?
 
-Imagine Pycht as your personal digital street artist. Here's what happens under the hood, step-by-step:
+Imagine `pycht` as your personal digital street artist. Here's what happens under the hood, step-by-step:
 
 1. **🖼️ Image loading**  
-   Pycht grabs your input image and flattens it like a pancake — every pixel becomes a 3-value row (B, G, R) in a giant NumPy array. Think of it as turning your photo into a spreadsheet of colors.
+   `pycht` grabs your input image and flattens it like a pancake — every pixel becomes a 3-value row (B, G, R) in a giant NumPy array. Think of it as turning your photo into a spreadsheet of colors.
 
 2. **🎯 K-Means clustering**  
    Then comes the science. Using OpenCV’s `kmeans`, we ask: *“Hey, what are the `N` most dominant colors in this image?”*  
@@ -87,7 +87,7 @@ Imagine Pycht as your personal digital street artist. Here's what happens under 
    Every pixel in your image is replaced by its cluster's centroid. Boom — you've got a stylized version of your image with just `N` bold, poster-style colors.
 
 4. **🔍 Color separation**  
-   Now the magic: for each color, Pycht creates a mask. All pixels that **don’t** belong to the current color cluster are set to black (and later transparent).  
+   Now the magic: for each color, `pycht` creates a mask. All pixels that **don’t** belong to the current color cluster are set to black (and later transparent).  
    Each color gets its own PNG file — like cutting stencils for spray-painting layers IRL.
 
 5. **📁 File drop**  
@@ -97,7 +97,7 @@ Imagine Pycht as your personal digital street artist. Here's what happens under 
 
 > It's like building silkscreen layers, but with Python, pixels, and zero mess.
 
-Ready to turn your cat photo into street art? Let Pycht paint it.
+Ready to turn your cat photo into street art? Let `pycht` paint it.
 
 
 ## 🖖 Contributing
@@ -109,4 +109,4 @@ This project follows the [all-contributors](https://github.com/all-contributors/
 
 ## 📜 License
 
-```pycht``` is free and open-source software licensed under the [MIT license](https://github.com/tlentali/pycht/blob/master/LICENSE).
+`pycht` is free and open-source software licensed under the [MIT license](https://github.com/tlentali/pycht/blob/master/LICENSE).
