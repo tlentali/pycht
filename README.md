@@ -72,9 +72,7 @@ pip install git+ssh://git@github.com/tlentali/pycht.git
 ```
 
 
-## 🥄 How ?
-
-## 🛠️ How Does It Work?
+## 🥄 How Does It Work?
 
 Imagine Pycht as your personal digital street artist. Here's what happens under the hood, step-by-step:
 
