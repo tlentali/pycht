@@ -11,8 +11,10 @@ dependencies = [
 
 [dependency-groups]
 dev = [
+    "black>=25.1.0",
     "jupyter>=1.1.1",
     "mkdocs>=1.6.1",
     "mkdocs-material>=9.6.9",
     "mkdocstrings[python]>=0.29.0",
+    "pylint>=3.3.6",
 ]

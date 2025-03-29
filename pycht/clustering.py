@@ -19,7 +19,7 @@ class Clustering:
         Parameters:
         ----------
         Z : np.ndarray
-            Flattened image data (pixels) of shape (num_pixels, num_channels), typically dtype float32.
+            Flattened image data (pixels) of shape (num_pixels, num_channels), dtype float32.
         nb_clusters : int
             The number of color clusters to form.
 

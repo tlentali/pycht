@@ -1,6 +1,7 @@
 """
 Main project settings and execution logic.
 """
+
 from .image_processing import ImageProcessing
 from .clustering import Clustering
 
