@@ -2,6 +2,7 @@
 Image processing utilities for reading, displaying, reshaping, and performing color separation
 to generate final stencils from clustered images.
 """
+
 import cv2
 import numpy as np
 import pandas as pd
@@ -79,26 +80,8 @@ class ImageProcessing:
         """
         cv2.imwrite(output_path, res)
 
-    def ShowImage(self, result_path: str, res) -> None:
-        """
-        Display the processed image and save it to disk.
-
-        Parameters
-        ----------
-        result_path : str
-            Path to save the displayed image.
-        res : np.ndarray
-            Processed image data (flattened).
-        """
-        # generate final image
-        res2 = res.reshape((self.img.shape))
-        cv2.imwrite(result_path, res2)
-        cv2.imshow("res2", res2)
-        cv2.waitKey(0)
-        cv2.destroyAllWindows()
-
     @staticmethod
-    def convert_image_to_float(Z) -> np.ndarray:
+    def convert_image_to_float(Z):
         """
         Convert an image array to float32 format.
 

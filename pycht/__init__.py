@@ -1,3 +1,7 @@
+"""
+Package building.
+"""
+
 from .pycht import Pycht
 from .image_processing import ImageProcessing
 from .clustering import Clustering
