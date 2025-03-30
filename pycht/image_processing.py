@@ -141,4 +141,4 @@ class ImageProcessing:
             cv2.imwrite("stencil_" + str(cmp) + ".png", result)
             cmp += 1
         res_2 = res.reshape((img.shape))
-        self.write_image(res_2, output_path)
+        self.write_image(res_2, output_path + ".png")
