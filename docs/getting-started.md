@@ -32,21 +32,21 @@ Here’s how to process an image and create stencils:
 from pycht import Pycht
 
 p = Pycht()
-p.stencil("images/input.jpg", "images/output.png", nb_colors=4)
+p.stencil("images/input.jpg", nb_colors=4, output_path="output/")
 ```
 
 This will:
 - Load `input.jpg`
 - Cluster its colors into 4 dominant tones
 - Save:
-  - `output.png`: the final image with clustered colors
+  - `output/`: the final image with clustered colors
   - `stencil_1.png`, `stencil_2.png`, ...: one per color, with transparency
 
 ---
 
 ## ⚙️ Parameters
 
-- `input_path` (str): Path to the original image.
+- `input_img` (str): Path to the original image.
 - `output_path` (str): Path to save the clustered version of the image.
 - `nb_colors` (int): Number of color clusters (stencils) to generate.
 

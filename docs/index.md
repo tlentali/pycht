@@ -32,11 +32,11 @@ from pycht import Pycht
 
 # Create a stencil with 5 color clusters
 p = Pycht()
-p.stencil("images/input.jpg", "images/output.png", nb_colors=5)
+p.stencil("images/input.jpg", nb_colors=5)
 ```
 
 This will generate:
-- output.png → final clustered image
+- stencil_final.png → final clustered image
 - stencil_1.png, stencil_2.png, etc. → one per color cluster, with transparency
 
 ---
