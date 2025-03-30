@@ -78,7 +78,7 @@ class ImageProcessing:
         output_path : str
             Destination file path.
         """
-        cv2.imwrite(output_path, res)
+        cv2.imwrite(output_path + ".png", res)
 
     @staticmethod
     def convert_image_to_float(Z):
@@ -141,4 +141,4 @@ class ImageProcessing:
             cv2.imwrite("stencil_" + str(cmp) + ".png", result)
             cmp += 1
         res_2 = res.reshape((img.shape))
-        self.write_image(res_2, output_path + ".png")
+        self.write_image(res_2, output_path)
