@@ -33,7 +33,7 @@ Generate a 5 colors stencil model :
 ```python
 >>> from pycht import Pycht
 
->>> Pycht().stencil('cat.jpg', 'stencil_cat.jpg', 5)
+>>> Pycht().stencil('cat.jpg', 5)
 ```
 
  Stencil 1                 |  stencil 2                 |   stencil 3               | stencil 4                 | stencil 5 |
