@@ -1,7 +1,7 @@
 [project]
 name = "pycht"
 version = "0.1.0"
-description = "Add your description here"
+description = "Street art by clustering."
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
@@ -18,3 +18,12 @@ dev = [
     "mkdocstrings[python]>=0.29.0",
     "pylint>=3.3.6",
 ]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["pycht"]
+exclude = ["tests*", "notebook*", "misc*"]
