@@ -22,6 +22,14 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
+We suggest you to use [uv](https://docs.astral.sh/uv/):
+
+```bash
+uv venv --python ~/.pyenv/versions/3.12.2/bin/python
+source .venv/bin/activate
+uv sync --inexact
+```
+
 ---
 
 ## 🖼️ Usage Example
@@ -68,7 +76,7 @@ pycht/
 
 ## 🧪 Try It With Your Own Image
 
-Put any `.jpg` or `.png` in the `images/` folder and run the script.  
+Put any `.jpg` or `.png` in the `images/` folder and run the script.
 The tool will output one clustered image and one stencil per color.
 
 ---
