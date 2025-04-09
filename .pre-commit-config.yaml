@@ -1,0 +1,37 @@
+default_language_version:
+    python: python3.12
+
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v2.3.0
+    hooks:
+    -   id: check-yaml
+    -   id: end-of-file-fixer
+    -   id: trailing-whitespace
+-   repo: local
+    hooks:
+      - id: isort
+        name: isort
+        entry: uv
+        args: ["run", "isort", "--filter-files"]
+        language: system
+        types: [python]
+        require_serial: true
+-   repo: local
+    hooks:
+      - id: black
+        name: black
+        entry: uv
+        args: ["run", "black", "--config", "./pyproject.toml"]
+        language: system
+        types: [python]
+        require_serial: true
+-   repo: local
+    hooks:
+      - id: pylint
+        name: pylint
+        entry: uv
+        args: ["run", "pylint", "pycht", "tests"]
+        language: system
+        types: [python]
+        require_serial: true
