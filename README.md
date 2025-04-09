@@ -47,7 +47,7 @@ Final result rendering with all stencils :
   <a href="#"><img src="https://raw.githubusercontent.com/tlentali/pycht/master/misc/stencil_cat.jpg" width="250"></a>
 </p>
 
-Cut it, paint it, stare at it. 
+Cut it, paint it, stare at it.
 Enjoy !
 
 
@@ -76,21 +76,21 @@ pip install git+ssh://git@github.com/tlentali/pycht.git
 
 Imagine `pycht` as your personal digital street artist. Here's what happens under the hood, step-by-step:
 
-1. **🖼️ Image loading**  
+1. **🖼️ Image loading**
    `pycht` grabs your input image and flattens it like a pancake — every pixel becomes a 3-value row (B, G, R) in a giant NumPy array. Think of it as turning your photo into a spreadsheet of colors.
 
-2. **🎯 K-Means clustering**  
-   Then comes the science. Using OpenCV’s `kmeans`, we ask: *“Hey, what are the `N` most dominant colors in this image?”*  
+2. **🎯 K-Means clustering**
+   Then comes the science. Using OpenCV’s `kmeans`, we ask: *“Hey, what are the `N` most dominant colors in this image?”*
    The algorithm groups similar pixels into `nb_colors` clusters and assigns each one a centroid — like reducing a rainbow into just a few paint buckets.
 
-3. **🎨 Color mapping**  
+3. **🎨 Color mapping**
    Every pixel in your image is replaced by its cluster's centroid. Boom — you've got a stylized version of your image with just `N` bold, poster-style colors.
 
-4. **🔍 Color separation**  
-   Now the magic: for each color, `pycht` creates a mask. All pixels that **don’t** belong to the current color cluster are set to black (and later transparent).  
+4. **🔍 Color separation**
+   Now the magic: for each color, `pycht` creates a mask. All pixels that **don’t** belong to the current color cluster are set to black (and later transparent).
    Each color gets its own PNG file — like cutting stencils for spray-painting layers IRL.
 
-5. **📁 File drop**  
+5. **📁 File drop**
    Your output includes:
    - `output.png` → The clustered image
    - `stencil_1.png`, `stencil_2.png`, ... → Transparent layers, one per color
@@ -98,6 +98,19 @@ Imagine `pycht` as your personal digital street artist. Here's what happens unde
 > It's like building silkscreen layers, but with Python, pixels, and zero mess.
 
 Ready to turn your cat photo into street art? Let `pycht` paint it.
+
+## 🧑‍💻 Development
+
+You can use `pip` or [uv](https://docs.astral.sh/uv/). From the pycht root folder, do:
+
+* `uv venv --python /path/to/3.12.x/python`. *Tips*: you can use [pyenv](https://github.com/pyenv/pyenv) to manage and
+  install multiple Python versions. You can find a specific version at `~/.pyenv/versions/3.12.2/bin/python` for
+  instance.
+* `source .venv/bin/activate` to activate the virtualenv `.venv` created by `uv`
+* `uv sync --inexact` to install all dependencies
+* `pre-commit install` (just one time). The pre-commit hook will run black, isort and pylint before your commit :)
+
+You're ready to hack!
 
 
 ## 🖖 Contributing
