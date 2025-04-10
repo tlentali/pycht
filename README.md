@@ -126,8 +126,6 @@ uv pip install -e .
 
 Make sure you have the required dependencies listed in `pyproject.toml`.
 
----
-
 ### 🚀 Usage
 
 ```bash
@@ -140,8 +138,6 @@ pycht stencil <input-img> [OPTIONS]
 **Options:**
 - `--output-path TEXT` – Directory where output layers will be saved (default: `./output`)
 - `--nb-colors INTEGER` – Number of stencil layers to generate (default: `3`)
-
----
 
 ### ✅ Example
 
