@@ -115,9 +115,7 @@ class ImageProcessing:
         # separate differants colors
         df = pd.DataFrame(res)
         df.columns = ["col1", "col2", "col3"]
-        df["tot"] = (
-            df["col1"].astype(str) + df["col2"].astype(str) + df["col3"].astype(str)
-        )
+        df["tot"] = df["col1"].astype(str) + df["col2"].astype(str) + df["col3"].astype(str)
         df["tot"].unique()
         cmp = 1
         for i in df["tot"].unique():
