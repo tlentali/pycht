@@ -112,6 +112,44 @@ You can use `pip` or [uv](https://docs.astral.sh/uv/). From the pycht root folde
 
 You're ready to hack!
 
+## 🧰 Command-Line Interface (CLI)
+
+You can use `pycht` as a command-line tool to generate stencil layers from an image — perfect for street art, posters, or digital illustration.
+
+### 🖥️ Installation
+
+Install in editable mode (dev mode) with [uv](https://github.com/astral-sh/uv) or pip:
+
+```bash
+uv pip install -e .
+```
+
+Make sure you have the required dependencies listed in `pyproject.toml`.
+
+---
+
+### 🚀 Usage
+
+```bash
+pycht stencil <input-img> [OPTIONS]
+```
+
+**Arguments:**
+- `<input-img>`: Path to the input image (JPEG, PNG, etc.)
+
+**Options:**
+- `--output-path TEXT` – Directory where output layers will be saved (default: `./output`)
+- `--nb-colors INTEGER` – Number of stencil layers to generate (default: `3`)
+
+---
+
+### ✅ Example
+
+```bash
+pycht stencil misc/cat.jpg --nb-colors 4 --output-path .
+```
+
+This will create 4 stencil layers and save them in the current folder.
 
 ## 🖖 Contributing
 
