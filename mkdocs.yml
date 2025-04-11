@@ -1,5 +1,6 @@
 site_name: Pycht Documentation
-site_url: https://tlentali.com
+use_directory_urls: false
+
 theme:
   name: material
 
@@ -15,5 +16,3 @@ nav:
       - Pycht: reference/pycht.md
       - Image Processing: reference/image_processing.md
       - Clustering: reference/clustering.md
-
-cname: tlentali.com
