@@ -53,7 +53,7 @@ extension-pkg-allow-list=["ujson"]
 per-file-ignores= ["./tests/:missing-function-docstring"]
 
 [tool.bumpver]
-current_version = "0.1.0"
+current_version = "0.1.1"
 version_pattern = "MAJOR.MINOR.PATCH"
 commit_message = "bump: {old_version} → {new_version}"
 tag_message = "v{new_version}"
