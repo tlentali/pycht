@@ -51,3 +51,9 @@ max-line-length = 120
 disable=["missing-module-docstring", "too-few-public-methods", "R0801"]
 extension-pkg-allow-list=["ujson"]
 per-file-ignores= ["./tests/:missing-function-docstring"]
+
+[tool.bumpver]
+current_version = "0.1.0"
+version_pattern = "MAJOR.MINOR.PATCH"
+commit_message = "bump: {old_version} → {new_version}"
+tag_message = "v{new_version}"
