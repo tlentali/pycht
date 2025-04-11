@@ -36,9 +36,9 @@ Generate a 5 colors stencil model :
 >>> Pycht().stencil('cat.jpg', 5)
 ```
 
- Stencil 1                 |  stencil 2                 |   stencil 3               | stencil 4                 | stencil 5 |
-:-------------------------:|:--------------------------:| :-----------------------: | :-----------------------: | :-----------------------: |
-![](https://raw.githubusercontent.com/tlentali/pycht/master/misc/stencil_2.png)  |  ![](https://raw.githubusercontent.com/tlentali/pycht/master/misc/stencil_3.png) | ![](https://raw.githubusercontent.com/tlentali/pycht/master/misc/stencil_4.png) | ![](https://raw.githubusercontent.com/tlentali/pycht/master/misc/stencil_5.png) | ![](https://raw.githubusercontent.com/tlentali/pycht/master/misc/stencil_1.png) |
+ |                                    Stencil 1                                    |                                    stencil 2                                    |                                    stencil 3                                    |                                    stencil 4                                    |                                    stencil 5                                    |
+ | :-----------------------------------------------------------------------------: | :-----------------------------------------------------------------------------: | :-----------------------------------------------------------------------------: | :-----------------------------------------------------------------------------: | :-----------------------------------------------------------------------------: |
+ | ![](https://raw.githubusercontent.com/tlentali/pycht/master/misc/stencil_2.png) | ![](https://raw.githubusercontent.com/tlentali/pycht/master/misc/stencil_3.png) | ![](https://raw.githubusercontent.com/tlentali/pycht/master/misc/stencil_4.png) | ![](https://raw.githubusercontent.com/tlentali/pycht/master/misc/stencil_5.png) | ![](https://raw.githubusercontent.com/tlentali/pycht/master/misc/stencil_1.png) |
 
 
 Final result rendering with all stencils :
