@@ -1,0 +1,34 @@
+name: Deploy MkDocs to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install uv
+        run: |
+          curl -LsSf https://astral.sh/uv/install.sh | sh
+
+      - name: Sync dependencies
+        run: |
+          uv venv
+          source .venv/bin/activate
+          uv pip install mkdocs mkdocs-material "mkdocstrings[python]>=0.29.0"
+
+      - name: Deploy documentation
+        run: |
+          source .venv/bin/activate
+          mkdocs gh-deploy --force
