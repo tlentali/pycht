@@ -18,7 +18,7 @@ class Pycht:
         self.image_processing = ImageProcessing()
         self.clustering = Clustering()
 
-    def stencil(self, input_img: str, nb_colors: int = 4, output_path: str = "./") -> None:
+    def stencil(self, input_img: str, nb_colors: int = 3, output_path: str = "./") -> None:
         """
         Generate color stencils from an input image using K-Means clustering.
 
