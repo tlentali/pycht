@@ -37,10 +37,9 @@ uv sync --inexact
 Here’s how to process an image and create stencils:
 
 ```python
-from pycht import Pycht
+import Pycht
 
-p = Pycht()
-p.stencil("images/input.jpg", nb_colors=4, output_path="output/")
+pycht.stencil("images/input.jpg", nb_colors=4, output_path="output/")
 ```
 
 This will:
