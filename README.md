@@ -5,7 +5,7 @@
     padding: 3px 6px;
     color: #000;
     font-size: 28px;>
-    <a href="#"><img src="https://raw.githubusercontent.com/tlentali/pycht/master/misc/pycht_logo_pink.png"  alt="pycht_logo" width="350"/>
+    <a href="#"><img src="https://raw.githubusercontent.com/tlentali/pycht/master/misc/pycht_logo.svg"  alt="pycht_logo" width="350"/>
     </a>
 </p>
 
