@@ -28,11 +28,10 @@ It automatically reduces an image’s color palette into distinct clusters and g
 ## 📦 Example Usage
 
 ```python
-from pycht import Pycht
+import pycht
 
 # Create a stencil with 5 color clusters
-p = Pycht()
-p.stencil("images/input.jpg", nb_colors=5)
+pycht.stencil("images/input.jpg", nb_colors=5)
 ```
 
 This will generate:
@@ -56,7 +55,7 @@ Want to experiment? Just provide any image and see how it gets broken down into 
 
 ## 🛠️ Technologies Used
 
-- Python 3.10+
+- Python 3.12+
 - OpenCV
 - NumPy
 - Pandas

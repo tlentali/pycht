@@ -31,9 +31,9 @@ Take a nice picture :
 
 Generate a 5 colors stencil model :
 ```python
->>> from pycht import Pycht
+>>> import pycht
 
->>> Pycht().stencil('cat.jpg', 5)
+>>> pycht.stencil('cat.jpg', 5)
 ```
 
  |                                    Stencil 1                                    |                                    stencil 2                                    |                                    stencil 3                                    |                                    stencil 4                                    |                                    stencil 5                                    |
@@ -101,7 +101,7 @@ Ready to turn your cat photo into street art? Let `pycht` paint it.
 
 ## 🧑‍💻 Development
 
-You can use `pip` or [uv](https://docs.astral.sh/uv/). From the pycht root folder, do:
+You can use `pip` or [uv](https://docs.astral.sh/uv/). From the `pycht` root folder, do:
 
 * `uv venv --python /path/to/3.12.x/python`. *Tips*: you can use [pyenv](https://github.com/pyenv/pyenv) to manage and
   install multiple Python versions. You can find a specific version at `~/.pyenv/versions/3.12.2/bin/python` for
@@ -129,7 +129,7 @@ Make sure you have the required dependencies listed in `pyproject.toml`.
 ### 🚀 Usage
 
 ```bash
-pycht stencil <input-img> [OPTIONS]
+pycht <input-img> [OPTIONS]
 ```
 
 **Arguments:**
@@ -142,7 +142,7 @@ pycht stencil <input-img> [OPTIONS]
 ### ✅ Example
 
 ```bash
-pycht stencil misc/cat.jpg --nb-colors 4 --output-path .
+pycht misc/cat.jpg --nb-colors 4 --output-path .
 ```
 
 This will create 4 stencil layers and save them in the current folder.
