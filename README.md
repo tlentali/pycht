@@ -50,6 +50,14 @@ Final result rendering with all stencils :
 Cut it, paint it, stare at it.
 Enjoy !
 
+## 📚 Documentation
+
+The full documentation for this project is available at:
+
+👉 [https://tlentali.github.io/pycht/](https://tlentali.github.io/pycht/)
+
+It includes [installation instructions](https://tlentali.github.io/pycht/getting-started.html), usage [examples](https://tlentali.github.io/pycht/getting-started.html), and the [API](https://tlentali.github.io/pycht/reference/pycht.html) reference.
+
 ## 🛠 Installation
 
 🐍 You need to install **Python 3.12** or above.
@@ -78,7 +86,7 @@ Imagine `pycht` as your personal digital street artist. Here's what happens unde
    `pycht` grabs your input image and flattens it like a pancake — every pixel becomes a 3-value row (B, G, R) in a giant NumPy array. Think of it as turning your photo into a spreadsheet of colors.
 
 2. **🎯 K-Means clustering**
-   Then comes the science. Using OpenCV’s `kmeans`, we ask: *“Hey, what are the `N` most dominant colors in this image?”*
+   Then comes the science. Using Scikit-Learn’s `kmeans`, we ask: *“Hey, what are the `N` most dominant colors in this image?”*
    The algorithm groups similar pixels into `nb_colors` clusters and assigns each one a centroid — like reducing a rainbow into just a few paint buckets.
 
 3. **🎨 Color mapping**
@@ -96,8 +104,6 @@ Imagine `pycht` as your personal digital street artist. Here's what happens unde
 > It's like building silkscreen layers, but with Python, pixels, and zero mess.
 
 Ready to turn your cat photo into street art? Let `pycht` paint it.
-
-Check out the [API](https://tlentali.github.io/pycht/reference/pycht.html) for a comprehensive overview.
 
 ## 🧑‍💻 Development
 
@@ -146,11 +152,6 @@ pycht misc/cat.jpg --nb-colors 4 --output-path .
 ```
 
 This will create 4 stencil layers and save them in the current folder.
-
-## 🔗 Useful links
-
-- [Documentation](https://tlentali.github.io/pycht/)
-- [Package releases](https://pypi.org/project/pycht/#history)
 
 ## 🖖 Contributing
 
