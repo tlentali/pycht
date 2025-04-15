@@ -1,22 +1,22 @@
-"""
-Image processing utilities for reading, displaying, reshaping, and performing color separation
-to generate final stencils from clustered images.
-"""
+from typing import Tuple
 
 import cv2
 import numpy as np
-import pandas as pd
 
 
 class ImageProcessing:
     """
     A collection of image processing methods for loading, transforming,
-    displaying, and segmenting colors within an image.
+    and segmenting colors within an image.
     """
 
     def process(self, input_path: str) -> np.ndarray:
         """
-        Load an image from disk, reshape it, and convert it to float32 format.
+        Load an image from disk and flatten it into a 2D array of float32 pixels.
+
+        This function reads an image from the given file path, verifies it was loaded
+        correctly, reshapes it into a 2D array where each row is a pixel with 3 color channels,
+        and casts it to float32 for clustering.
 
         Parameters
         ----------
@@ -26,117 +26,133 @@ class ImageProcessing:
         Returns
         -------
         np.ndarray
-            Flattened image array with dtype np.float32.
+            2D array of shape (num_pixels, 3), dtype float32.
+
+        Raises
+        ------
+        FileNotFoundError
+            If the image cannot be loaded from the specified path.
         """
-        img = self.read_image(input_path)
-        Z = self.reshape_image(img)
-        return self.convert_image_to_float(Z)
+        img = cv2.imread(input_path)
+        if img is None:
+            raise FileNotFoundError(f"Image not found at: {input_path}")
+        return np.float32(img.reshape((-1, 3)))
 
     @staticmethod
-    def read_image(input_path: str) -> np.ndarray:
-        """
-        Load an image from the specified file path.
-
-        Parameters
-        ----------
-        input_path : str
-            Path to the input image file.
-
-        Returns
-        -------
-        np.ndarray
-            The loaded image as a NumPy array (BGR format).
-        """
-        return cv2.imread(input_path)
+    def write_image(image: np.ndarray, output_path: str) -> None:
+        """Write image in file."""
+        cv2.imwrite(output_path, image)
 
     @staticmethod
-    def reshape_image(image: np.ndarray) -> np.ndarray:
+    def to_bgra_with_alpha(image: np.ndarray, alpha_mask: np.ndarray) -> np.ndarray:
         """
-        Reshape the image into a 2D array of pixels.
+        Convert a BGR image to BGRA using a binary alpha mask.
 
         Parameters
         ----------
         image : np.ndarray
-            Original image array.
+            Input BGR image.
+        alpha_mask : np.ndarray
+            Alpha mask (0=transparent, 255=opaque).
 
         Returns
         -------
         np.ndarray
-            Reshaped array of shape (num_pixels, 3).
+            BGRA image with alpha channel.
         """
-        return image.reshape((-1, 3))
+        result = cv2.cvtColor(image, cv2.COLOR_BGR2BGRA)
+        result[:, :, 3] = alpha_mask.astype(np.uint8)
+        return result
 
-    @staticmethod
-    def write_image(res: np.ndarray, output_path: str) -> None:
+    def color_separation(
+        self,
+        clustered_pixels: np.ndarray,
+        input_path: str,
+        output_dir: str,
+        background_color: Tuple[int, int, int] = (0, 0, 0),
+    ) -> None:
         """
-        Save an image to disk.
+        Generate and save separate stencil images for each color cluster in the input image.
+
+        This method reconstructs the clustered image from flattened pixel data,
+        identifies all unique color clusters, and for each one generates a transparent
+        stencil image. Each resulting image is saved with an alpha channel indicating
+        where the cluster appears.
 
         Parameters
         ----------
-        res : np.ndarray
-            Image array to write.
-        output_path : str
-            Destination file path.
-        """
-        cv2.imwrite(output_path, res)
-
-    @staticmethod
-    def convert_image_to_float(Z):
-        """
-        Convert an image array to float32 format.
-
-        Parameters
-        ----------
-        Z : np.ndarray
-            Input image array.
-
-        Returns
-        -------
-        np.ndarray
-            Converted array with dtype np.float32.
-        """
-        return np.float32(Z)
-
-    def color_separation(self, res, input_path: str, output_path: str) -> None:
-        """
-        Separate and isolate each color cluster from an image and save each cluster
-        as a separate stencil with transparency.
-
-        Parameters
-        ----------
-        res : np.ndarray
-            Clustered image data (flattened).
+        clustered_pixels : np.ndarray
+            Flattened image data with clustered RGB values.
         input_path : str
-            Path to the original image (for reshaping purposes).
-        output_path : str
-            Path to save the combined clustered image.
+            Path to the original input image, used to get image dimensions.
+        output_dir : str
+            Directory where stencil images will be saved.
+        background_color : Tuple[int, int, int], optional
+            RGB background color for non-cluster areas, by default black (0, 0, 0).
         """
-        img = self.read_image(input_path)
-        # separate differants colors
-        df = pd.DataFrame(res)
-        df.columns = ["col1", "col2", "col3"]
-        df["tot"] = df["col1"].astype(str) + df["col2"].astype(str) + df["col3"].astype(str)
-        df["tot"].unique()
-        cmp = 1
-        for i in df["tot"].unique():
-            df_annexe = df.copy()
-            df_annexe.loc[(df["tot"] != i), "col1"] = 0
-            df_annexe.loc[(df["tot"] != i), "col2"] = 0
-            df_annexe.loc[(df["tot"] != i), "col3"] = 0
+        clustered_image, shape = self._load_and_prepare(input_path, clustered_pixels)
+        unique_colors = np.unique(clustered_pixels, axis=0)
 
-            res_annexe = df_annexe[["col1", "col2", "col3"]].values
-            res_annexe2 = res_annexe.reshape((img.shape))
+        for i, color in enumerate(unique_colors, start=1):
+            stencil_bgra = self._create_stencil_image(clustered_image, color, background_color)
+            self.write_image(stencil_bgra, f"{output_dir}/stencil_{i}.png")
 
-            # Create transparency mask: non-black areas become visible
-            color = (0, 0, 0)
-            mask = np.where((res_annexe2 == color).all(axis=2), 0, 255).astype(np.uint8)
+        self.write_image(clustered_image, f"{output_dir}/stencil_final.png")
 
-            # Convert to BGRA and add alpha channel
-            result = res_annexe2.copy()
-            result = cv2.cvtColor(result, cv2.COLOR_BGR2BGRA)
-            result[:, :, 3] = mask
+    def _load_and_prepare(self, input_path: str, clustered_pixels: np.ndarray) -> Tuple[np.ndarray, Tuple[int, int]]:
+        """
+        Load the original image to extract its shape and reshape the clustered pixel data accordingly.
 
-            cv2.imwrite("stencil_" + str(cmp) + ".png", result)
-            cmp += 1
-        res_2 = res.reshape((img.shape))
-        self.write_image(res_2, output_path + "stencil_final.png")
+        Parameters
+        ----------
+        input_path : str
+            Path to the original input image.
+        clustered_pixels : np.ndarray
+            Flattened pixel array of shape (num_pixels, 3).
+
+        Returns
+        -------
+        clustered_image : np.ndarray
+            Image reshaped to (height, width, 3) with dtype uint8.
+        shape : Tuple[int, int]
+            The original image height and width.
+
+        Raises
+        ------
+        FileNotFoundError
+            If the input image cannot be read from the path.
+        """
+        img = cv2.imread(input_path)
+        if img is None:
+            raise FileNotFoundError(f"Image not found at: {input_path}")
+        h, w, _ = img.shape
+        clustered_image = clustered_pixels.reshape((h, w, 3)).astype(np.uint8)
+        return clustered_image, (h, w)
+
+    def _create_stencil_image(
+        self, clustered_image: np.ndarray, color: np.ndarray, background_color: Tuple[int, int, int]
+    ) -> np.ndarray:
+        """
+        Create a BGRA stencil image where only the selected color cluster is visible and the rest is transparent.
+
+        Parameters
+        ----------
+        clustered_image : np.ndarray
+            The full clustered image of shape (H, W, 3), dtype uint8.
+        color : np.ndarray
+            A 3-element array representing the RGB color of the cluster to extract.
+        background_color : Tuple[int, int, int]
+            The background RGB color to use where the cluster is not present.
+
+        Returns
+        -------
+        np.ndarray
+            A stencil image with shape (H, W, 4) in BGRA format, where the alpha channel masks out
+            all areas except those matching the selected color cluster.
+        """
+        mask = np.all(clustered_image == color, axis=2)
+        stencil = np.full_like(clustered_image, background_color)
+        stencil[mask] = color
+
+        alpha = (mask * 255).astype(np.uint8)
+        return self.to_bgra_with_alpha(stencil, alpha)
