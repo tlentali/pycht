@@ -2,8 +2,8 @@
 Module for performing color clustering on images using K-Means.
 """
 
-import cv2
 import numpy as np
+from sklearn.cluster import KMeans
 
 
 class Clustering:
@@ -12,31 +12,26 @@ class Clustering:
     """
 
     @staticmethod
-    def compute(Z: np.ndarray, nb_clusters: int):
+    def compute(pixel_array: np.ndarray, nb_clusters: int, random_state: int = 0) -> np.ndarray:
         """
         Apply K-Means clustering to the given data and return the clustered result.
 
-        Parameters:
+        Parameters
         ----------
-        Z : np.ndarray
-            Flattened image data (pixels) of shape (num_pixels, num_channels), dtype float32.
+        pixel_array : np.ndarray
+            Flattened image data (pixels), shape (num_pixels, num_channels).
         nb_clusters : int
             The number of color clusters to form.
+        random_state : int
+            Random seed for reproducibility.
 
-        Returns:
+        Returns
         -------
         np.ndarray
             The clustered image data where each pixel is replaced by the centroid of its cluster,
-            with dtype uint8 and the same shape as Z.
+            with dtype uint8 and the same shape as pixel_array.
         """
-        _, label, center = cv2.kmeans(
-            Z,
-            nb_clusters,
-            None,
-            (cv2.TERM_CRITERIA_EPS + cv2.TERM_CRITERIA_MAX_ITER, 10, 1),
-            10,
-            cv2.KMEANS_RANDOM_CENTERS,
-        )
-        center = np.uint8(center)  # Convert centroid colors to uint8
-        res = center[label.flatten()]  # Replace pixel values with their cluster center
-        return res
+        kmeans = KMeans(n_clusters=nb_clusters, n_init=10, random_state=random_state)
+        labels = kmeans.fit_predict(pixel_array)
+        centers = np.uint8(kmeans.cluster_centers_)
+        return centers[labels]
