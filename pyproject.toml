@@ -6,9 +6,9 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "opencv-python>=4.11.0.86",
-    "pandas>=2.2.3",
+    "scikit-learn>=1.6.1",
     "typer",
-    "typing-extensions"
+    "typing-extensions",
 ]
 
 [project.urls]
@@ -23,6 +23,8 @@ dev = [
     "mkdocs-material>=9.6.9",
     "mkdocstrings[python]>=0.29.0",
     "pylint>=3.3.6",
+    "pylint-per-file-ignores>=1.4.0",
+    "pytest>=8.3.5",
     "typer>=0.15.2",
 ]
 
