@@ -1,6 +1,6 @@
 site_name: Pycht Documentation
 use_directory_urls: false
-
+site_url: https://tlentali.github.io/pycht/
 theme:
   name: material
 

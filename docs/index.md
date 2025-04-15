@@ -8,7 +8,7 @@ It automatically reduces an image’s color palette into distinct clusters and g
 
 ## ✨ Features
 
-- 🧠 Simple image clustering using OpenCV’s K-Means algorithm  
+- 🧠 Simple image clustering using Scikit-Learn’s K-Means algorithm  
 - 🖼️ Color separation with transparency masks  
 - 📁 Input/output file handling with minimal setup  
 - 🧰 Modular architecture for easy extension
@@ -58,7 +58,6 @@ Want to experiment? Just provide any image and see how it gets broken down into 
 - Python 3.12+
 - OpenCV
 - NumPy
-- Pandas
 - MkDocs (for this documentation!)
 
 ---
