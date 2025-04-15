@@ -1,6 +1,6 @@
 [project]
 name = "pycht"
-version = "0.1.16"
+version = "0.1.17"
 description = "Street art by clustering."
 readme = "README.md"
 requires-python = ">=3.12"
@@ -61,7 +61,7 @@ extension-pkg-allow-list=["ujson"]
 per-file-ignores= ["./tests/:missing-function-docstring"]
 
 [tool.bumpver]
-current_version = "0.1.16"
+current_version = "0.1.17"
 version_pattern = "MAJOR.MINOR.PATCH"
 commit_message = "bump: {old_version} → {new_version}"
 tag_message = "v{new_version}"
