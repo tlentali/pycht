@@ -13,7 +13,7 @@ dependencies = [
 
 [project.urls]
 Repository = "https://github.com/tlentali/pycht"
-Documentation = "https://tlentali.com/docs/pycht/"
+Documentation = "https://tlentali.github.io/pycht/"
 
 [dependency-groups]
 dev = [

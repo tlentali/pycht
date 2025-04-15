@@ -50,7 +50,6 @@ Final result rendering with all stencils :
 Cut it, paint it, stare at it.
 Enjoy !
 
-
 ## 🛠 Installation
 
 🐍 You need to install **Python 3.12** or above.
@@ -70,7 +69,6 @@ pip install git+https://github.com/tlentali/pycht
 # Or, through SSH:
 pip install git+ssh://git@github.com/tlentali/pycht.git
 ```
-
 
 ## 🥄 How Does It Work?
 
@@ -98,6 +96,8 @@ Imagine `pycht` as your personal digital street artist. Here's what happens unde
 > It's like building silkscreen layers, but with Python, pixels, and zero mess.
 
 Ready to turn your cat photo into street art? Let `pycht` paint it.
+
+Check out the [API](https://tlentali.github.io/pycht/reference/pycht.html) for a comprehensive overview.
 
 ## 🧑‍💻 Development
 
@@ -146,6 +146,11 @@ pycht misc/cat.jpg --nb-colors 4 --output-path .
 ```
 
 This will create 4 stencil layers and save them in the current folder.
+
+## 🔗 Useful links
+
+- [Documentation](https://tlentali.github.io/pycht/)
+- [Package releases](https://pypi.org/project/pycht/#history)
 
 ## 🖖 Contributing
 
