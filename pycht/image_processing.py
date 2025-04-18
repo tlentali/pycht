@@ -1,7 +1,7 @@
 from typing import Tuple
 from PIL import Image
 import numpy as np
-import os
+from pathlib import Path
 
 
 class ImageProcessing:
@@ -10,21 +10,20 @@ class ImageProcessing:
     and segmenting colors within an image using Pillow instead of OpenCV.
     """
 
-    def process(self, input_path: str) -> np.ndarray:
+    def process(self, input_path: Path) -> np.ndarray:
         """
         Load an image from disk and flatten it into a 2D array of float32 pixels.
         """
-        try:
-            img = Image.open(input_path).convert("RGB")
-        except FileNotFoundError:
+        if not input_path.exists():
             raise FileNotFoundError(f"Image not found at: {input_path}")
+        img = Image.open(input_path).convert("RGB")
         return np.float32(np.array(img).reshape((-1, 3)))
 
     @staticmethod
-    def write_image(image: np.ndarray, output_path: str) -> None:
+    def write_image(image: np.ndarray, output_path: Path) -> None:
         """Write image to a file."""
+        output_path.parent.mkdir(parents=True, exist_ok=True)
         img = Image.fromarray(image)
-        os.makedirs(os.path.dirname(output_path), exist_ok=True)
         img.save(output_path)
 
     @staticmethod
@@ -41,8 +40,8 @@ class ImageProcessing:
     def color_separation(
         self,
         clustered_pixels: np.ndarray,
-        input_path: str,
-        output_dir: str,
+        input_path: Path,
+        output_dir: Path,
         background_color: Tuple[int, int, int] = (0, 0, 0),
     ) -> None:
         """
@@ -53,18 +52,17 @@ class ImageProcessing:
 
         for i, color in enumerate(unique_colors, start=1):
             stencil_bgra = self._create_stencil_image(clustered_image, color, background_color)
-            self.write_image(stencil_bgra, f"{output_dir}/stencil_{i}.png")
+            self.write_image(stencil_bgra, output_dir / f"stencil_{i}.png")
 
-        self.write_image(clustered_image, f"{output_dir}/stencil_final.png")
+        self.write_image(clustered_image, output_dir / "stencil_final.png")
 
-    def _load_and_prepare(self, input_path: str, clustered_pixels: np.ndarray) -> Tuple[np.ndarray, Tuple[int, int]]:
+    def _load_and_prepare(self, input_path: Path, clustered_pixels: np.ndarray) -> Tuple[np.ndarray, Tuple[int, int]]:
         """
         Load the original image to extract its shape and reshape the clustered pixel data accordingly.
         """
-        try:
-            img = Image.open(input_path).convert("RGB")
-        except FileNotFoundError:
+        if not input_path.exists():
             raise FileNotFoundError(f"Image not found at: {input_path}")
+        img = Image.open(input_path).convert("RGB")
         w, h = img.size
         clustered_image = clustered_pixels.reshape((h, w, 3)).astype(np.uint8)
         return clustered_image, (h, w)
