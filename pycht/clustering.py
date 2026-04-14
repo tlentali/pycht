@@ -30,6 +30,19 @@ class Clustering:
         np.ndarray
             The clustered image data where each pixel is replaced by the centroid of its cluster,
             with dtype uint8 and the same shape as pixel_array.
+
+        Examples
+        --------
+        Basic usage:
+
+        >>> from clustering import Clustering
+
+        >>> clustering = Clustering()
+        >>> clustering.compute(flattened_img="image.jpg", nb_colors=5)
+
+        With custom output:
+
+        >>> clustering.compute(flattened_img="image.jpg", nb_colors=5, output_path="./out")
         """
         kmeans = KMeans(n_clusters=nb_clusters, n_init=10, random_state=random_state)
         labels = kmeans.fit_predict(pixel_array)
