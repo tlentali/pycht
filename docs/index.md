@@ -1,4 +1,13 @@
-# 🎨 Pycht
+<p align="center";
+    font-family: Georgia, sans-serif;
+    text-decoration: none;
+    background: #ffbdfb;
+    padding: 3px 6px;
+    color: #000;
+    font-size: 28px;>
+    <a href="#"><img src="https://raw.githubusercontent.com/tlentali/pycht/master/misc/pycht_logo.svg"  alt="pycht_logo" width="350"/>
+    </a>
+</p>
 
 **Pycht** is a lightweight Python tool that transforms images into colorful street art-style stencils using K-Means clustering.
 
