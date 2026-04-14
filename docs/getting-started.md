@@ -6,28 +6,8 @@ Welcome to **Pycht** – a tool for transforming images into colorful stencil la
 
 ## 📦 Installation
 
-Clone the repository and install dependencies:
-
 ```bash
-git clone https://github.com/tlentali/pycht.git
-cd pycht
-pip install -r requirements.txt
-```
-
-Alternatively, if you're using a virtual environment:
-
-```bash
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-pip install -r requirements.txt
-```
-
-We suggest you to use [uv](https://docs.astral.sh/uv/):
-
-```bash
-uv venv --python ~/.pyenv/versions/3.12.2/bin/python
-source .venv/bin/activate
-uv sync --inexact
+pip install pycht
 ```
 
 ---
@@ -37,7 +17,7 @@ uv sync --inexact
 Here’s how to process an image and create stencils:
 
 ```python
-import Pycht
+import pycht
 
 pycht.stencil("images/input.jpg", nb_colors=4, output_path="output/")
 ```

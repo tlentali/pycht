@@ -31,6 +31,13 @@ class Pycht:
             Directory path to save the stencil images.
         nb_colors : int
             Number of color clusters to segment the image into.
+
+        Examples
+        --------
+        Basic usage:
+
+        >>> import pycht
+        >>> pycht.stencil('cat.jpg', 5)
         """
         input_img = Path(input_img)
         output_path = Path(output_path)
